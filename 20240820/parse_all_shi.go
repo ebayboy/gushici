@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	content, err := ioutil.ReadFile("all.txt")
+
+	content, err := ioutil.ReadFile("all_shi.txt")
 	if err != nil {
 		fmt.Println("文件读取失败！", err)
 		return
