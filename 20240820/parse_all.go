@@ -17,12 +17,10 @@ func main() {
 
 	lines := strings.Split(string(content), "\n")
 	for _, line := range lines {
-		fmt.Println(line)
 		cols := strings.Split(line, " - ")
 		if len(cols) != 2 {
 			continue
 		}
-		fmt.Printf("line:[%s] len:%d\n", line, len(cols))
 		_, exist := cs[cols[1]]
 		if !exist {
 			cs[cols[1]] = make([]string, 0)
@@ -31,6 +29,6 @@ func main() {
 	}
 
 	for k, v := range cs {
-		fmt.Printf("%d %s [%v]\n", len(v), k, v)
+		fmt.Printf("%d %s [%v]\n", len(v), k, strings.Join(v, ","))
 	}
 }
